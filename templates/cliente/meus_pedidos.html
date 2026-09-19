@@ -1,0 +1,77 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Pedidos - BomGás</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+    
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+           <img src="/static/images/image.png" width="200" height="70" alt="Logo">
+        </div>
+
+       <nav>
+    <a href="/">
+        <i class="fa-solid fa-house"></i>
+        Início
+    </a>
+
+    <a href="/produtos/">
+        <i class="fa-solid fa-fire-flame-simple"></i>
+        Produtos
+    </a>
+
+    <a href="/carrinho/" class="carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Meu Pedido
+        <span id="contador-carrinho">0</span>
+    </a>
+
+     <a href="/meus_pedidos.html">
+        <i class="fa-solid fa-clipboard-list"></i>
+        Meus Pedidos
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-user"></i>
+        Entrar
+    </a>
+</nav>
+    </header>
+
+
+    <main>
+
+        <section class="produtos">
+
+            <h1>Meus Pedidos</h1>
+
+            <strong>
+                <p>Confira o histórico dos seus pedidos.</p>
+            </strong>
+
+
+            <div class="lista-pedidos" id="lista-pedidos">
+
+            </div>
+
+        </section>
+
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

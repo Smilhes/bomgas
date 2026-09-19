@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Pedido - BomGás</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+           <img src="/static/images/image.png" width="200" height="70" alt="Logo">
+        </div>
+
+       <nav>
+    <a href="/">
+        <i class="fa-solid fa-house"></i>
+        Início
+    </a>
+
+    <a href="/produtos/">
+        <i class="fa-solid fa-fire-flame-simple"></i>
+        Produtos
+    </a>
+
+    <a href="/carrinho/" class="carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Meu Pedido
+        <span id="contador-carrinho">0</span>
+    </a>
+
+    <a href="/meus_pedidos.html">
+        <i class="fa-solid fa-clipboard-list"></i>
+        Meus Pedidos
+    </a>
+    <a href="#">
+        <i class="fa-solid fa-user"></i>
+        Entrar
+    </a>
+</nav>
+    </header>
+
+
+    <main>
+
+        <section class="produtos">
+
+            <h1>Meu Pedido</h1>
+
+            <strong><p>Confira os produtos selecionados.</p></strong>
+
+            <div id="lista-carrinho">
+
+                <p>Nenhum produto adicionado ao pedido.</p>
+
+            </div>
+
+            <div class="resumo-pedido">
+
+                <center><h2>Total: R$ 0,00</h2></center>
+            <button
+                type="button"
+                class="btn-finalizar"
+                onclick="window.location.href='/finalizar-pedido/'">
+                Finalizar pedido
+            </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+        <footer>
+        <p>© 2026 BomGás - Gás, água e carvão na sua porta.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+
+</html>

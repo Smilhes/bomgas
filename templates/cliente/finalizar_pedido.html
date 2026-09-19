@@ -1,0 +1,195 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar Pedido - BomGás</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+           <img src="/static/images/image.png" width="200" height="70" alt="Logo">
+        </div>
+
+       <nav>
+    <a href="/">
+        <i class="fa-solid fa-house"></i>
+        Início
+    </a>
+
+    <a href="/produtos/">
+        <i class="fa-solid fa-fire-flame-simple"></i>
+        Produtos
+    </a>
+
+    <a href="/carrinho/" class="carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Meu Pedido
+        <span id="contador-carrinho">0</span>
+    </a>
+
+    <a href="/meus_pedidos.html">
+        <i class="fa-solid fa-clipboard-list"></i>
+        Meus Pedidos
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-user"></i>
+        Entrar
+    </a>
+</nav>
+    </header>
+
+
+
+    <main>
+
+        <section class="finalizar-pedido">
+
+            <h1>Finalizar Pedido</h1>
+
+            <p>Preencha seus dados para receber o pedido.</p>
+
+
+            <form onsubmit="event.preventDefault(); confirmarPedido();">
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="telefone">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="endereco">
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        placeholder="Rua, Avenida..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campos-linha">
+
+                    <div class="campo">
+
+                        <label for="numero">
+                            Número
+                        </label>
+
+                        <input
+                            type="text"
+                            id="numero"
+                            name="numero"
+                            placeholder="Número"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="bairro">
+                            Bairro
+                        </label>
+
+                        <input
+                            type="text"
+                            id="bairro"
+                            name="bairro"
+                            placeholder="Bairro"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="observacao">
+                        Observação
+                    </label>
+
+                    <textarea
+                        id="observacao"
+                        name="observacao"
+                        placeholder="Alguma informação para a entrega?"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-finalizar">
+                    Confirmar pedido
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+
+
+</html>
