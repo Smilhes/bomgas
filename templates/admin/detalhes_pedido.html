@@ -1,0 +1,433 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes do Pedido - BomGás</title>
+
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pedidos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detalhes-pedido.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="{% static 'images/image.png' %}" alt="BomGás">
+            </div>
+
+            <div class="admin-info">
+
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Administrador</span>
+                </div>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="{% url 'admin_dashboard' %}" class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="{% url 'admin_pedidos' %}" class="menu-item active">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Pedidos</span>
+                    <span class="menu-badge">3</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Produtos</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Financeiro</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+                <a href="#" class="menu-item logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sair</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="topbar-title">
+                    <h1>Detalhes do pedido</h1>
+                    <p>Visualize todas as informações do pedido.</p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="notification-button">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-user">
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="topbar-user-info">
+                            <strong>Administrador</strong>
+                            <span>Admin</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- DETALHES DO PEDIDO -->
+
+            <section class="dashboard-content">
+
+                <div class="order-details-page">
+
+                    <!-- CABEÇALHO DO PEDIDO -->
+
+                    <div class="order-details-header">
+
+                        <div class="order-details-title">
+
+                            <a href="{% url 'admin_pedidos' %}" class="back-button">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </a>
+
+                            <div>
+                                <span>Pedido</span>
+                                <h2>#001</h2>
+                            </div>
+
+                        </div>
+
+                        <span class="order-status preparing">
+                            Em preparação
+                        </span>
+
+                    </div>
+
+
+                    <!-- INFORMAÇÕES -->
+
+                    <div class="order-info-grid">
+
+                        <!-- CLIENTE -->
+
+                        <div class="details-card">
+
+                            <div class="details-card-header">
+                                <i class="fa-solid fa-user"></i>
+
+                                <div>
+                                    <h3>Dados do cliente</h3>
+                                    <p>Informações do cliente</p>
+                                </div>
+                            </div>
+
+                            <div class="details-info">
+
+                                <div>
+                                    <span>Nome</span>
+                                    <strong>João da Silva</strong>
+                                </div>
+
+                                <div>
+                                    <span>Telefone</span>
+                                    <strong>(14) 99999-9999</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ENDEREÇO -->
+
+                        <div class="details-card">
+
+                            <div class="details-card-header">
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <div>
+                                    <h3>Endereço de entrega</h3>
+                                    <p>Local para entrega</p>
+                                </div>
+                            </div>
+
+                            <div class="details-info">
+
+                                <div>
+                                    <span>Endereço</span>
+                                    <strong>Rua das Flores, 123</strong>
+                                </div>
+
+                                <div>
+                                    <span>Bairro</span>
+                                    <strong>Centro</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUTOS -->
+
+                    <div class="details-card products-card">
+
+                        <div class="details-card-header">
+
+                            <i class="fa-solid fa-box"></i>
+
+                            <div>
+                                <h3>Produtos do pedido</h3>
+                                <p>Itens adicionados ao pedido</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-order">
+
+                            <div class="product-order-icon">
+                                <i class="fa-solid fa-fire-flame-simple"></i>
+                            </div>
+
+                            <div class="product-order-info">
+                                <strong>Botijão de Gás 13kg</strong>
+                                <span>Quantidade: 2</span>
+                            </div>
+
+                            <strong class="product-order-price">
+                                R$ 110,00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="product-order">
+
+                            <div class="product-order-icon">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+
+                            <div class="product-order-info">
+                                <strong>Água Mineral 20L</strong>
+                                <span>Quantidade: 1</span>
+                            </div>
+
+                            <strong class="product-order-price">
+                                R$ 10,00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="order-total">
+
+                            <span>Total do pedido</span>
+
+                            <strong>
+                                R$ 120,00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAGAMENTO E OBSERVAÇÃO -->
+
+                    <div class="order-info-grid">
+
+                        <div class="details-card">
+
+                            <div class="details-card-header">
+                                <i class="fa-solid fa-credit-card"></i>
+
+                                <div>
+                                    <h3>Pagamento</h3>
+                                    <p>Forma de pagamento</p>
+                                </div>
+                            </div>
+
+                            <div class="details-info">
+
+                                <div>
+                                    <span>Forma de pagamento</span>
+                                    <strong>Dinheiro</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="details-card">
+
+                            <div class="details-card-header">
+                                <i class="fa-solid fa-comment"></i>
+
+                                <div>
+                                    <h3>Observação</h3>
+                                    <p>Observação do cliente</p>
+                                </div>
+                            </div>
+
+                            <div class="order-observation">
+                                Entregar, se possível, após as 18h.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="details-card status-card">
+
+                        <div class="details-card-header">
+
+                            <i class="fa-solid fa-truck"></i>
+
+                            <div>
+                                <h3>Status do pedido</h3>
+                                <p>Acompanhamento da entrega</p>
+                            </div>
+
+                        </div>
+
+                        <div class="status-control">
+
+                            <select>
+                                <option>Em preparação</option>
+                                <option>A caminho</option>
+                                <option>Entregue</option>
+                                <option>Cancelado</option>
+                            </select>
+
+                            <button type="button">
+                                <i class="fa-solid fa-check"></i>
+                                Atualizar status
+                            </button>
+
+                        </div>
+
+                                    <!-- HISTÓRICO VISUAL DO PEDIDO -->
+
+                            <div class="order-timeline">
+
+                                <div class="timeline-item completed">
+                                    <div class="timeline-icon">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+
+                                    <div class="timeline-content">
+                                        <strong>Pedido recebido</strong>
+                                        <span>O pedido foi registrado com sucesso.</span>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item current">
+                                    <div class="timeline-icon">
+                                        <i class="fa-solid fa-box"></i>
+                                    </div>
+
+                                    <div class="timeline-content">
+                                        <strong>Em preparação</strong>
+                                        <span>O depósito está preparando o pedido.</span>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <i class="fa-solid fa-truck"></i>
+                                    </div>
+
+                                    <div class="timeline-content">
+                                        <strong>A caminho</strong>
+                                        <span>O entregador saiu para realizar a entrega.</span>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <i class="fa-solid fa-house-circle-check"></i>
+                                    </div>
+
+                                    <div class="timeline-content">
+                                        <strong>Entregue</strong>
+                                        <span>O pedido foi entregue ao cliente.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+    
+        <script src="{% static 'js/detalhes-pedido.js' %}"></script>
+
+</body>
+
+</html>

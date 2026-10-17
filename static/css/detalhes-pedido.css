@@ -1,0 +1,447 @@
+/* ================================
+   DETALHES DO PEDIDO
+================================ */
+
+.order-details-page {
+    width: 100%;
+}
+
+
+/* CABEÇALHO */
+
+.order-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.order-details-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.order-details-title > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-details-title span {
+    font-size: 12px;
+    color: #999;
+}
+
+.order-details-title h2 {
+    font-size: 22px;
+    color: #222;
+}
+
+
+/* BOTÃO VOLTAR */
+
+.back-button {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+
+    color: #555;
+
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f0f3ff;
+    border-color: #dfe2ff;
+    color: #0c10f3;
+}
+
+
+/* GRID DE INFORMAÇÕES */
+
+.order-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* CARDS */
+
+.details-card {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* CABEÇALHO DOS CARDS */
+
+.details-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 19px 22px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.details-card-header > i {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f0f3ff;
+    color: #0c10f3;
+
+    font-size: 15px;
+}
+
+.details-card-header h3 {
+    font-size: 14px;
+    color: #333;
+}
+
+.details-card-header p {
+    margin-top: 3px;
+
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* INFORMAÇÕES */
+
+.details-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    padding: 20px 22px;
+}
+
+.details-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.details-info span {
+    font-size: 11px;
+    color: #999;
+}
+
+.details-info strong {
+    font-size: 13px;
+    color: #444;
+}
+
+
+/* PRODUTOS */
+
+.products-card {
+    margin-bottom: 18px;
+}
+
+.product-order {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 22px;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.product-order:last-of-type {
+    border-bottom: none;
+}
+
+.product-order-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #fff4e8;
+    color: #f07800;
+
+    font-size: 17px;
+}
+
+.product-order-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-order-info strong {
+    font-size: 13px;
+    color: #333;
+}
+
+.product-order-info span {
+    font-size: 11px;
+    color: #999;
+}
+
+.product-order-price {
+    font-size: 13px;
+    color: #333;
+}
+
+
+/* TOTAL */
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    background: #fafafa;
+    border-top: 1px solid #eeeeee;
+}
+
+.order-total span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.order-total strong {
+    font-size: 18px;
+    color: #0c10f3;
+}
+
+
+/* OBSERVAÇÃO */
+
+.order-observation {
+    padding: 20px 22px;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* STATUS */
+
+.status-card {
+    margin-top: 18px;
+}
+
+.status-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 20px 22px;
+}
+
+.status-control select {
+    height: 42px;
+
+    min-width: 220px;
+
+    padding: 0 12px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #555;
+    font-size: 13px;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.status-control select:focus {
+    border-color: #0c10f3;
+}
+
+.status-control button {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #0c10f3;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.status-control button:hover {
+    background: #080bb5;
+    transform: translateY(-1px);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    .order-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .order-details-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .order-details-title h2 {
+        font-size: 19px;
+    }
+
+    .details-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .status-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .status-control select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .status-control button {
+        width: 100%;
+    }
+
+}
+
+/* LINHA DO TEMPO DO PEDIDO */
+
+.order-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e9edf5;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f7;
+    color: #9ca3af;
+    z-index: 1;
+}
+
+.timeline-item.completed .timeline-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.timeline-item.current .timeline-icon {
+    background: #fff0d9;
+    color: #f08a00;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 2px;
+}
+
+.timeline-content strong {
+    font-size: 14px;
+    color: #263248;
+}
+
+.timeline-content span {
+    font-size: 12px;
+    color: #8a94a6;
+    line-height: 1.5;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 38px;
+    height: calc(100% - 38px);
+    width: 2px;
+    background: #e5e9f2;
+}
+
+.timeline-item.completed::after {
+    background: #86efac;
+}

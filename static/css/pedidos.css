@@ -1,0 +1,391 @@
+/* ================================
+   PÁGINA DE PEDIDOS
+================================ */
+
+.orders-page {
+    width: 100%;
+}
+
+
+/* CABEÇALHO */
+
+.orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.orders-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.orders-header p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #999;
+}
+
+
+/* FILTROS */
+
+.orders-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    margin-bottom: 20px;
+
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+}
+
+.search-box {
+    flex: 1;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #f8f8f8;
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+}
+
+.search-box i {
+    color: #999;
+    font-size: 14px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 13px;
+    color: #333;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+
+.orders-filters select {
+    height: 42px;
+    min-width: 170px;
+
+    padding: 0 12px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #555;
+
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.orders-filters select:focus {
+    border-color: #0c10f3;
+}
+
+
+/* TABELA */
+
+.orders-table-card {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+
+/* CABEÇALHO DA TABELA */
+
+.orders-table-header {
+    min-height: 52px;
+
+    display: grid;
+    grid-template-columns: 80px 1.5fr 1fr 100px 140px 70px;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    background: #fafafa;
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+}
+
+
+/* LINHAS */
+
+.order-row {
+    min-height: 76px;
+
+    display: grid;
+    grid-template-columns: 80px 1.5fr 1fr 100px 140px 70px;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #f1f1f1;
+
+    transition: background 0.2s ease;
+}
+
+.order-row:last-child {
+    border-bottom: none;
+}
+
+.order-row:hover {
+    background: #fafbff;
+}
+
+
+/* NÚMERO */
+
+.order-number strong {
+    font-size: 13px;
+    color: #0c10f3;
+}
+
+
+/* CLIENTE */
+
+.order-client {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-client strong {
+    font-size: 13px;
+    color: #333;
+}
+
+.order-client span {
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* DATA */
+
+.order-date {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    font-size: 12px;
+    color: #555;
+}
+
+.order-date span {
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* TOTAL */
+
+.order-total {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+
+/* STATUS */
+
+.order-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.order-status.preparing {
+    background: #fff4d6;
+    color: #a66b00;
+}
+
+.order-status.route {
+    background: #e8f0ff;
+    color: #2456b8;
+}
+
+.order-status.delivered {
+    background: #e5f8ed;
+    color: #16834b;
+}
+
+
+/* AÇÃO */
+
+.order-action button {
+    min-width: 88px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #f0f3ff;
+    color: #0c10f3;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.order-action button:hover {
+    background: #0c10f3;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.order-action button i {
+    font-size: 12px;
+}   
+
+.order-action button:hover {
+    background: #0c10f3;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 1000px) {
+
+    .orders-filters {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        flex-basis: 100%;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .orders-table-card {
+        overflow-x: auto;
+    }
+
+    .orders-table-header,
+    .order-row {
+        min-width: 850px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .orders-header h2 {
+        font-size: 18px;
+    }
+
+    .orders-filters {
+        padding: 14px;
+    }
+
+    .orders-filters select {
+        width: 100%;
+    }
+
+}
+
+/* BOTÃO LIMPAR FILTROS */
+
+.clear-filters {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #777;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clear-filters:hover {
+    background: #f5f6ff;
+    border-color: #dfe2ff;
+    color: #0c10f3;
+}
+
+.clear-filters i {
+    font-size: 12px;
+}
+
+/* CONTADOR DE PEDIDOS */
+
+.orders-count {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    background: #f0f3ff;
+    border-radius: 9px;
+
+    color: #0c10f3;
+}
+
+.orders-count strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.orders-count span {
+    font-size: 12px;
+    font-weight: 600;
+}

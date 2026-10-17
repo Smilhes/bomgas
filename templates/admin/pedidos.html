@@ -1,0 +1,329 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedidos - BomGás</title>
+
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pedidos.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="{% static 'images/image.png' %}" alt="BomGás">
+            </div>
+
+            <div class="admin-info">
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="{% url 'admin_dashboard' %}" class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="{% url 'admin_pedidos' %}" class="menu-item active">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Pedidos</span>
+                    <span class="menu-badge">0</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Produtos</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Financeiro</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </a>
+
+                <a href="#" class="menu-item logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sair</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="topbar-title">
+                    <h1>Pedidos</h1>
+                    <p>Gerencie os pedidos realizados pelos clientes.</p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="notification-button">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-user">
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="topbar-user-info">
+                            <strong>Administrador</strong>
+                            <span>Admin</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ÁREA DOS PEDIDOS -->
+
+            <section class="dashboard-content">
+
+                <div class="orders-page">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <h2>Lista de pedidos</h2>
+                            <p>Acompanhe e gerencie os pedidos dos clientes.</p>
+                        </div>
+
+                        <div class="orders-count">
+                            <strong>3</strong>
+                            <span>pedidos encontrados</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FILTROS -->
+
+                    <div class="orders-filters">
+
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                placeholder="Pesquisar por pedido, cliente ou telefone..."
+                            >
+                        </div>
+
+                        <select>
+                            <option>Todos os status</option>
+                            <option>Em preparação</option>
+                            <option>A caminho</option>
+                            <option>Entregue</option>
+                            <option>Cancelado</option>
+                        </select>
+
+                        <select>
+                            <option>Todos os períodos</option>
+                            <option>Hoje</option>
+                            <option>Últimos 7 dias</option>
+                            <option>Últimos 30 dias</option>
+                        </select>
+
+                        <button class="clear-filters" type="button">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            Limpar
+                        </button>
+
+                    </div>
+
+
+                    <!-- TABELA -->
+
+                    <div class="orders-table-card">
+
+                        <div class="orders-table-header">
+                            <span>Pedido</span>
+                            <span>Cliente</span>
+                            <span>Data</span>
+                            <span>Total</span>
+                            <span>Status</span>
+                            <span>Ações</span>
+                        </div>
+
+
+                        <!-- PEDIDO EXEMPLO -->
+
+                        <div class="order-row">
+
+                            <div class="order-number">
+                                <strong>#001</strong>
+                            </div>
+
+                            <div class="order-client">
+                                <strong>João da Silva</strong>
+                                <span>(14) 99999-9999</span>
+                            </div>
+
+                            <div class="order-date">
+                                01/10/2026
+                                <span>18:30</span>
+                            </div>
+
+                            <div class="order-total">
+                                R$ 120,00
+                            </div>
+
+                            <div>
+                                <span class="order-status preparing">
+                                    Em preparação
+                                </span>
+                            </div>
+
+                          <div class="order-action">
+                            <button
+                                type="button"
+                                title="Ver detalhes"
+                                onclick="window.location.href='{% url 'admin_detalhes_pedido' %}'"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                                <span>Detalhes</span>
+                            </button>
+                        </div>
+
+                        </div>
+
+
+                        <!-- PEDIDO EXEMPLO -->
+
+                        <div class="order-row">
+
+                            <div class="order-number">
+                                <strong>#002</strong>
+                            </div>
+
+                            <div class="order-client">
+                                <strong>Maria Oliveira</strong>
+                                <span>(14) 98888-8888</span>
+                            </div>
+
+                            <div class="order-date">
+                                01/10/2026
+                                <span>17:45</span>
+                            </div>
+
+                            <div class="order-total">
+                                R$ 85,00
+                            </div>
+
+                            <div>
+                                <span class="order-status route">
+                                    A caminho
+                                </span>
+                            </div>
+
+                            <div class="order-action">
+                                <button
+                                    type="button"
+                                    title="Ver detalhes"
+                                    onclick="window.location.href='{% url 'admin_detalhes_pedido' %}'"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>Detalhes</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PEDIDO EXEMPLO -->
+
+                        <div class="order-row">
+
+                            <div class="order-number">
+                                <strong>#003</strong>
+                            </div>
+
+                            <div class="order-client">
+                                <strong>Carlos Santos</strong>
+                                <span>(14) 97777-7777</span>
+                            </div>
+
+                            <div class="order-date">
+                                01/10/2026
+                                <span>16:20</span>
+                            </div>
+
+                            <div class="order-total">
+                                R$ 55,00
+                            </div>
+
+                            <div>
+                                <span class="order-status delivered">
+                                    Entregue
+                                </span>
+                            </div>
+
+                                    <div class="order-action">
+                                <button
+                                    type="button"
+                                    title="Ver detalhes"
+                                    onclick="window.location.href='{% url 'admin_detalhes_pedido' %}'"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>Detalhes</span>
+                                </button>
+                            </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

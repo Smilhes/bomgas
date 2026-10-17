@@ -182,3 +182,18 @@ def api_pedido_status(request, pedido_id):
             "data": pedido.criado_em.strftime("%d/%m/%Y, %H:%M:%S"),
         }
     )
+
+def admin_dashboard(request):
+    return render(request, "admin/dashboard.html")
+
+def admin_pedidos(request):
+    return render(request, "admin/pedidos.html")
+
+def admin_detalhes_pedido(request):
+    return render(request, "admin/detalhes_pedido.html")
+
+def admin_clientes(request):
+    return render(request, "admin/clientes.html")
+
+def admin_produtos(request):
+    return render(request, "admin/produtos.html")
